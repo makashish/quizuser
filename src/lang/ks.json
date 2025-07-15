@@ -1,0 +1,23 @@
+{
+  "start_quiz": "کویز شروع کرو",
+  "instructions": "کویز ہدایات",
+  "total_questions": "کل سوالات",
+  "total_time": "کل وقت",
+  "color_legend": "رنگوں کی علامت",
+  "green": "جواب دیا گیا",
+  "red": "پڑھا گیا لیکن جواب نہیں دیا",
+  "blue": "ابھی تک نہیں پڑھا گیا",
+  "yellow": "فی الحال منتخب کیا گیا",
+  "time_left": "باقی وقت",
+  "previous": "پچھلا",
+  "next": "اگلا",
+  "submit_quiz": "کویز جمع کریں",
+  "quiz_complete": "کویز مکمل ہوا",
+  "correct_answers": "صحیح جوابات",
+  "incorrect_answers": "غلط / بغیر جواب",
+  "summary": "خلاصہ",
+  "your_answer": "آپ کا جواب",
+  "correct_answer": "صحیح جواب",
+  "question_label": "سوال {{id}}: {{question}}",
+  "language_select": "زبان منتخب کریں"
+}

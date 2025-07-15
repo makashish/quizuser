@@ -1,0 +1,36 @@
+{
+"quiz_instructions": "Please read the instructions before starting",
+"total_questions": "Total Questions",
+"total_time": "Total Time",
+"minutes": "minutes",
+"status_answered": "Green = Answered",
+"status_current": "Yellow = Currently Selected",
+"status_not_seen": "Blue = Not Seen",
+"status_seen_not_answered": "Red = Seen but Not Answered",
+  "instructions": "Quiz Instructions",
+  "color_legend": "Color Indicators",
+  "green": "Answered",
+  "red": "Read but not answered",
+  "blue": "Not read",
+  "yellow": "Currently selected",
+  "time_left": "Time Left",
+  "previous": "Previous",
+  "next": "Next",
+  "submit_quiz": "Submit Quiz",
+  "quiz_complete": "Quiz Completed",
+  "correct_answers": "Correct Answers",
+  "incorrect_answers": "Incorrect / Not Answered",
+  "summary": "Summary",
+  "your_answer": "Your answer",
+  "correct_answer": "Correct answer",
+  "question_label": "Q{{id}}: {{question}}",
+  "language_select": "Choose Language",
+  "question": "Question",
+
+
+  "question_grid": "Question Grid",
+  "mark_as_reminder": "Mark as Reminder",
+  
+  "confirm_submit": "Are you sure you want to submit the quiz?"
+
+}

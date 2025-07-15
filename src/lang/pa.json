@@ -1,0 +1,23 @@
+{
+  "start_quiz": "ਕੁਇਜ਼ ਸ਼ੁਰੂ ਕਰੋ",
+  "instructions": "ਕੁਇਜ਼ ਨਿਰਦੇਸ਼",
+  "total_questions": "ਕੁੱਲ ਪ੍ਰਸ਼ਨ",
+  "total_time": "ਕੁੱਲ ਸਮਾਂ",
+  "color_legend": "ਰੰਗ ਇੰਗੀਕੈਟਰ",
+  "green": "ਉਤਰ ਦਿੱਤਾ ਗਿਆ",
+  "red": "ਪੜ੍ਹਿਆ ਗਿਆ ਪਰ ਉਤਰ ਨਹੀਂ ਦਿੱਤਾ",
+  "blue": "ਅਜੇ ਤੱਕ ਨਹੀਂ ਪੜ੍ਹਿਆ ਗਿਆ",
+  "yellow": "ਮੌਜੂਦਾ ਚੁਣਿਆ ਗਿਆ",
+  "time_left": "ਬਾਕੀ ਸਮਾਂ",
+  "previous": "ਪਿਛਲਾ",
+  "next": "ਅਗਲਾ",
+  "submit_quiz": "ਕੁਇਜ਼ ਜਮ੍ਹਾਂ ਕਰੋ",
+  "quiz_complete": "ਕੁਇਜ਼ ਮੁਕੰਮਲ ਹੋ ਗਿਆ",
+  "correct_answers": "ਸਹੀ ਉਤਰ",
+  "incorrect_answers": "ਗਲਤ / ਨਾ ਦਿੱਤੇ ਉਤਰ",
+  "summary": "ਸੰਖੇਪ",
+  "your_answer": "ਤੁਹਾਡਾ ਉਤਰ",
+  "correct_answer": "ਸਹੀ ਉਤਰ",
+  "question_label": "ਪ੍ਰਸ਼ਨ {{id}}: {{question}}",
+  "language_select": "ਭਾਸ਼ਾ ਚੁਣੋ"
+}

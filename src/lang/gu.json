@@ -1,0 +1,23 @@
+{
+  "start_quiz": "ક્વિઝ શરૂ કરો",
+  "instructions": "ક્વિઝ સૂચનાઓ",
+  "total_questions": "કુલ પ્રશ્નો",
+  "total_time": "કુલ સમય",
+  "color_legend": "રંગ સૂચકાંક",
+  "green": "ઉત્તર આપ્યું",
+  "red": "વાંચ્યું પરંતુ ઉત્તર આપ્યો નથી",
+  "blue": "વાંચ્યું નથી",
+  "yellow": "હાલમાં પસંદ કરેલું",
+  "time_left": "બાકીનો સમય",
+  "previous": "પાછળનું",
+  "next": "આગળનું",
+  "submit_quiz": "ક્વિઝ સબમિટ કરો",
+  "quiz_complete": "ક્વિઝ પૂર્ણ થયું",
+  "correct_answers": "સાચા જવાબો",
+  "incorrect_answers": "ખોટા / ન આપેલા જવાબો",
+  "summary": "સારાંશ",
+  "your_answer": "તમારું ઉત્તર",
+  "correct_answer": "સાચું ઉત્તર",
+  "question_label": "પ્રશ્ન {{id}}: {{question}}",
+  "language_select": "ભાષા પસંદ કરો"
+}
