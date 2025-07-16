@@ -14,7 +14,7 @@ export const QuizProvider = ({ children }) => {
 
   // ✅ Load questions from MongoDB API
   useEffect(() => {
-  axios.get("http://localhost:5000/api/questions")
+  axios.get(`${import.meta.env.VITE_API_BASE}/api/questions`)
     .then((res) => {
       const data = res.data;
       if (Array.isArray(data) && data.length > 0) {
