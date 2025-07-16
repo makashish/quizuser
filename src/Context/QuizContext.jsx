@@ -14,30 +14,29 @@ export const QuizProvider = ({ children }) => {
 
   // ✅ Load questions from MongoDB API
   useEffect(() => {
-    axios
-      .get("http://localhost:5000/api/questions")
-      .then((res) => {
-        const data = res.data;
-        if (Array.isArray(data) && data.length > 0) {
-          setQuestions(data);
-          const initialStatus = {};
-          data.forEach((q) => {
-            initialStatus[q.id] = "blue";
-          });
-          setStatus(initialStatus);
-          // Reset state only after questions load
-          setQuizStarted(false);
-          setQuizSubmitted(false);
-          setAnswers({});
-          setTimeLeft(1800);
-          setCurrentQuestion(0);
-        } else {
-          console.error("No questions received from server.");
-        }
-      })
-      .catch((err) => console.error("Failed to load questions from API:", err));
-  }, []);
-
+  axios.get("http://localhost:5000/api/questions")
+    .then((res) => {
+      const data = res.data;
+      if (Array.isArray(data) && data.length > 0) {
+        setQuestions(data);
+        const initialStatus = {};
+        data.forEach((q) => {
+          initialStatus[q.id] = "blue"; // Not seen
+        });
+        setStatus(initialStatus);
+        setQuizStarted(false);
+        setQuizSubmitted(false);
+        setAnswers({});
+        setTimeLeft(1800);
+        setCurrentQuestion(0);
+      } else {
+        console.error("❌ No questions received from server.");
+      }
+    })
+    .catch((err) => {
+      console.error("❌ Failed to load questions:", err.message);
+    });
+}, []);
   // ✅ Timer logic
   useEffect(() => {
     if (!quizStarted || quizSubmitted) return;
