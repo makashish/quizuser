@@ -1,6 +1,6 @@
 # Dependencies
 node_modules/
-public/
+public/config.json
 # Build
 dist/
 build/
