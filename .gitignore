@@ -1,9 +1,8 @@
 # Node modules
 node_modules/
-public/config.json
 
 # Build output
-dist/
+
 build/
 
 # Local env/config files
