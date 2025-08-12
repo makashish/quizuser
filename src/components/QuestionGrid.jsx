@@ -11,7 +11,7 @@ export default function QuestionGrid() {
   };
 
   return (
-    <div className="question-grid" style={{ display: "grid", gridTemplateColumns: "repeat(2, .1fr)", gap: "3px" }}>
+    <div className="question-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, .1fr)", gap: "3px" }}>
       {questions.map((q) => (
         <button
           key={q.id}

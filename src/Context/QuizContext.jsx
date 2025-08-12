@@ -10,10 +10,27 @@ export const QuizProvider = ({ children }) => {
   const [status, setStatus] = useState({});
   const [quizStarted, setQuizStarted] = useState(false);
   const [quizSubmitted, setQuizSubmitted] = useState(false);
-  const [timeLeft, setTimeLeft] = useState(1800); // 30 minutes
+  const [timeLeft, setTimeLeft] = useState(null); // initially null
+  const [defaultTime, setDefaultTime] = useState(3600); // JSON se aayega
   const [apiBaseUrl, setApiBaseUrl] = useState(null);
 
-  // Load config.json once on mount
+  // ✅ Load time.json once
+  useEffect(() => {
+    fetch("/time.json")
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to load time.json");
+        return res.json();
+      })
+      .then((data) => {
+        if (data.TIME_LEFT) {
+          setDefaultTime(data.TIME_LEFT);
+          setTimeLeft(data.TIME_LEFT);
+        }
+      })
+      .catch((err) => console.error("❌ Time JSON load error:", err));
+  }, []);
+
+  // ✅ Load config.json
   useEffect(() => {
     fetch("/config.json")
       .then((res) => {
@@ -23,12 +40,10 @@ export const QuizProvider = ({ children }) => {
       .then((config) => {
         setApiBaseUrl(config.API_BASE_URL);
       })
-      .catch((err) => {
-        console.error(err);
-      });
+      .catch((err) => console.error(err));
   }, []);
 
-  // Fetch questions once apiBaseUrl is loaded
+  // ✅ Fetch questions from API
   useEffect(() => {
     if (!apiBaseUrl) return;
 
@@ -40,24 +55,22 @@ export const QuizProvider = ({ children }) => {
           setQuestions(data);
           const initialStatus = {};
           data.forEach((q) => {
-            initialStatus[q.id] = "blue"; // Not seen
+            initialStatus[q.id] = "blue";
           });
           setStatus(initialStatus);
           setQuizStarted(false);
           setQuizSubmitted(false);
           setAnswers({});
-          setTimeLeft(1800);
+          setTimeLeft(defaultTime); // JSON se aaya hua value use karo
           setCurrentQuestion(0);
         } else {
           console.error("❌ No questions received from server.");
         }
       })
-      .catch((err) => {
-        console.error("❌ Failed to load questions:", err.message);
-      });
-  }, [apiBaseUrl]);
+      .catch((err) => console.error("❌ Failed to load questions:", err.message));
+  }, [apiBaseUrl, defaultTime]);
 
-  // Timer logic (unchanged)
+  // ✅ Timer logic
   useEffect(() => {
     if (!quizStarted || quizSubmitted) return;
 
@@ -75,12 +88,12 @@ export const QuizProvider = ({ children }) => {
     return () => clearInterval(timer);
   }, [quizStarted, quizSubmitted]);
 
-  // Actions (unchanged)
+  // ✅ Actions
   const startQuiz = () => {
     if (questions.length === 0) return;
     setQuizStarted(true);
     setQuizSubmitted(false);
-    setTimeLeft(1800);
+    setTimeLeft(defaultTime); // JSON ka value
     setAnswers({});
     setCurrentQuestion(0);
   };

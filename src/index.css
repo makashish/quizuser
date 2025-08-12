@@ -15,7 +15,7 @@ body {
 /* Question grid */
 .question-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(90px, .5fr));
+  grid-template-columns: repeat(auto-fill, minmax(120px, .5fr));
   gap: 10px;
 }
 
@@ -81,7 +81,7 @@ body {
 .quiz-nav-buttons {
   display: flex;
   justify-content: space-between;
-  margin-top: 2rem;
+  margin-top: 4rem;
   gap: 1rem;
 }
 
