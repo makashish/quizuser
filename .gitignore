@@ -1,18 +1,30 @@
-# Dependencies
+# Node modules
 node_modules/
 public/config.json
-# Build
+
+# Build output
 dist/
 build/
 
-# Env
+# Local env/config files
 config.json
 .env
 .env.local
+.env.*.local
 
-# Logs
-*.log
-
-# IDE
+# Capacitor / Android build
+android/
+ios/
 .vscode/
 .idea/
+.DS_Store
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Optional caches
+.cache/
+.eslintcache
