@@ -71,11 +71,11 @@ export default function QuizPage() {
         </div>
 
         {/* Mark and Submit */}
-        <div style={{ display: "flex", justifyContent: "space-between", marginTop: "2rem" }}>
+        <div style={{ display: "flex", justifyContent: "space-between", marginTop: "1rem" }}>
           <button
             onClick={markCurrentAsYellow}
             style={{
-              padding: "0.5rem 1rem",
+              padding: "1rem 2rem",
               backgroundColor: "orange",
               color: "#fff",
               border: "none",

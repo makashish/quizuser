@@ -16,7 +16,7 @@ export default function QuestionCard({ question }) {
   const isSelected = (opt) => selected === opt;
 
   return (
-    <div style={{ maxWidth: "700px", margin: "auto", padding: "1rem" }}>
+    <div style={{ maxWidth: "1200px", margin: "auto", padding: "1rem" }}>
       <h2>
         {t("question")} {question.id}:
       </h2>

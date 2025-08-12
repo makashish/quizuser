@@ -1,12 +1,17 @@
+
 {
-"quiz_instructions": "Please read the instructions before starting",
+"quiz_instructions": "Please read the instructions before starting." ,
+
+"app_instructions":"Questions of this app updates every month on date 01 of the month(Math & reasoning), 11 of the month(General Studies), 21 of the month(Current Affairs).",
 "total_questions": "Total Questions",
 "total_time": "Total Time",
 "minutes": "minutes",
+"quiz_duration":"15",
 "status_answered": "Green = Answered",
 "status_current": "Yellow = Currently Selected",
 "status_not_seen": "Blue = Not Seen",
 "status_seen_not_answered": "Red = Seen but Not Answered",
+"start quiz": "quiz start",
   "instructions": "Quiz Instructions",
   "color_legend": "Color Indicators",
   "green": "Answered",

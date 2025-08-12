@@ -11,13 +11,13 @@ export default function QuestionGrid() {
   };
 
   return (
-    <div className="question-grid" style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: "8px" }}>
+    <div className="question-grid" style={{ display: "grid", gridTemplateColumns: "repeat(2, .1fr)", gap: "3px" }}>
       {questions.map((q) => (
         <button
           key={q.id}
           onClick={() => visitQuestion(q.id)}
           style={{
-            padding: "0.5rem",
+            padding: "0.1rem",
             fontWeight: "bold",
             border: "none",
             borderRadius: "4px",
@@ -39,7 +39,7 @@ const getButtonColor = (status) => {
     case "green":
       return "#4caf50"; // Answered
     case "yellow":
-      return "#ffc107"; // Currently selected
+      return "#dbc608ff"; // Currently selected
     case "red":
       return "#f44336"; // Seen but not answered
     case "blue":

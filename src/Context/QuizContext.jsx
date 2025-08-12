@@ -11,33 +11,53 @@ export const QuizProvider = ({ children }) => {
   const [quizStarted, setQuizStarted] = useState(false);
   const [quizSubmitted, setQuizSubmitted] = useState(false);
   const [timeLeft, setTimeLeft] = useState(1800); // 30 minutes
+  const [apiBaseUrl, setApiBaseUrl] = useState(null);
 
-  // ✅ Load questions from MongoDB API
+  // Load config.json once on mount
   useEffect(() => {
-  axios.get(`${import.meta.env.VITE_API_BASE}/api/questions`)
-    .then((res) => {
-      const data = res.data;
-      if (Array.isArray(data) && data.length > 0) {
-        setQuestions(data);
-        const initialStatus = {};
-        data.forEach((q) => {
-          initialStatus[q.id] = "blue"; // Not seen
-        });
-        setStatus(initialStatus);
-        setQuizStarted(false);
-        setQuizSubmitted(false);
-        setAnswers({});
-        setTimeLeft(1800);
-        setCurrentQuestion(0);
-      } else {
-        console.error("❌ No questions received from server.");
-      }
-    })
-    .catch((err) => {
-      console.error("❌ Failed to load questions:", err.message);
-    });
-}, []);
-  // ✅ Timer logic
+    fetch("/config.json")
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to load config.json");
+        return res.json();
+      })
+      .then((config) => {
+        setApiBaseUrl(config.API_BASE_URL);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
+
+  // Fetch questions once apiBaseUrl is loaded
+  useEffect(() => {
+    if (!apiBaseUrl) return;
+
+    axios
+      .get(`${apiBaseUrl}/api/questions`)
+      .then((res) => {
+        const data = res.data;
+        if (Array.isArray(data) && data.length > 0) {
+          setQuestions(data);
+          const initialStatus = {};
+          data.forEach((q) => {
+            initialStatus[q.id] = "blue"; // Not seen
+          });
+          setStatus(initialStatus);
+          setQuizStarted(false);
+          setQuizSubmitted(false);
+          setAnswers({});
+          setTimeLeft(1800);
+          setCurrentQuestion(0);
+        } else {
+          console.error("❌ No questions received from server.");
+        }
+      })
+      .catch((err) => {
+        console.error("❌ Failed to load questions:", err.message);
+      });
+  }, [apiBaseUrl]);
+
+  // Timer logic (unchanged)
   useEffect(() => {
     if (!quizStarted || quizSubmitted) return;
 
@@ -55,7 +75,7 @@ export const QuizProvider = ({ children }) => {
     return () => clearInterval(timer);
   }, [quizStarted, quizSubmitted]);
 
-  // ✅ Actions
+  // Actions (unchanged)
   const startQuiz = () => {
     if (questions.length === 0) return;
     setQuizStarted(true);
